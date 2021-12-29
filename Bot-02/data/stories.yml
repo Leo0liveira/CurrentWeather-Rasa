@@ -1,0 +1,7 @@
+version: "3.0"
+
+stories:
+  - story: happy path 1
+    steps:
+      - intent: greet
+      - action: utter_greet

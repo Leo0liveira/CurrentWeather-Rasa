@@ -1,0 +1,74 @@
+version: '3.0'
+
+intents:
+- greet
+- goodbye
+- ask_weather
+- inform_city
+- inform_nome
+- deny
+- affirm
+
+entities:
+- name
+- location
+
+
+slots:
+  name:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: name
+
+  location:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: location
+      conditions:
+      - active_loop: location_form
+
+forms:
+  location_form:
+    required_slots:
+    - name
+    - location
+
+actions:
+  - utter_ask_location
+  - utter_temp
+  - utter_ask_name
+  - utter_deny
+  - affirm
+  - deny
+  - city
+  - utter_check_again
+  - action_weather_api
+
+responses:
+  utter_greet:
+    - text: "Olá, eu sou o chatbot da compass Uol que, o que você deseja? "
+
+  utter_ask_name:
+    - text: "Poderia me informe seu nome, por gentileza? "
+
+  utter_ask_location:
+    - text: "Qual cidade deseja buscar? "
+  
+  utter_temp:
+    - text: "{weather_data}"
+
+  utter_deny:
+    - text: "Desculpe, não foi possível encontrar esta cidade."
+
+  utter_goodbye:
+    - text: "Até mais! Tenha uma ótima semana!"
+
+  utter_check_again:
+    - text: "Deseja mais checar mais alguma cidade? "
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

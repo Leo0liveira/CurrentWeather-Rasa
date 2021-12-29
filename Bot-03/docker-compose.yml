@@ -1,0 +1,32 @@
+version: "3.0"  
+services:  
+  rasa:
+    build:
+      context: .
+      dockerfile: Rasa.dockerfile
+    image: sprint04-compass:rasaptbr
+    ports:   
+      - 5005:5005
+    depends_on:
+      - action-server
+    volumes:   
+      - ./:/app  
+    command:
+     - rasa
+     - shell
+    user: root
+
+  action-server:  
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sprint04-compass:rasabot 
+    container_name: weather
+    ports:  
+      - 5055:5055
+    volumes:  
+      - ./actions:/app/actions
+    command:  
+      - rasa
+      - run
+      - actions

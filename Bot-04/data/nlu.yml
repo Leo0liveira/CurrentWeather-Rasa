@@ -1,0 +1,82 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - Ola
+    - Oi
+    - Oie
+    - Ei
+    - Bom dia
+    - Boa tarde
+    - Boa noite
+
+- intent: goodbye
+  examples: |
+    - Adeus
+    - Te vejo mais tarde
+    - Boa noite
+    - Tchau
+    - Tenha um ótimo dia
+    - Te vejo por ai
+    - Muito Obrigado
+    - Obrigado
+    - Tchau tchau
+
+# - intent: request_history
+#   examples: |
+#     - Mostre o historico
+#     - Me mostre o historico de busca
+#     - Quero ver as buscas anteriores
+#     - Buscas anteriores
+#     - Pode me mostrar o historico de busca ?
+#     - Historico de buscas, por favor
+
+- intent: ask_weather
+  examples: |
+    - Como está o tempo ?
+    - Como está o tempo hoje?
+    - Diga-me a previsão do tempo
+    - Quero saber como ta o clima
+    - Eu quero saber como está o tempo de hoje
+    - Previsão do tempo
+    - Como esta o clima na minha cidade?
+    - Previsao do tempo
+
+- intent: inform_city
+  examples: |
+    - Minha cidade é [Três Lagoas](location)
+    - Eu estou em [Campo Grande](location)
+    - Sou de [Porto Alegre](location)
+    - A cidade é [Veneza](location)
+    - Minha localização é [Paris](location)
+    - Quero saber o clima de [Rio de Janeiro](location)
+    - Estou na cidade de [Palmas](location)
+    - Minha cidade é [Campina Grande](location)
+    - Quero saber como está o clima em [Paris](location)
+    - [São Paulo](location)
+
+- intent: inform_nome
+  examples: |
+    - Eu sou o [Leonardo Oliveira](name)
+    - Meu nome é [Lucas Paulo Jr](name)
+    - Pode me chamar de [Gabriel Borges](name)
+    - Prazer, [Maria Eduarda](name)
+    - [Walter](name)
+    - Eu sou a [Cristiane](name)
+    - Meu nome é [Danielle Silva Pereira Santos](name)
+    - Prazer, [Gustavo](name)
+    - [Samuel Jackson](name)
+
+- intent: deny
+  examples: |
+    - Não
+    - Não, muito obrigado
+
+- intent: affirm
+  examples: |
+    - Sim
+    - Por favor
+    - Quero
+
+    
